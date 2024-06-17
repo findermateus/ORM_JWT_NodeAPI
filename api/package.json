@@ -1,0 +1,17 @@
+{
+   "name": "n3serverside",
+   "version": "1.0.0",
+   "description": "Projeto referente a N3 da disciplina programção server side. Desenvolvido por: Mateus Finder Martins e Douglas Vinícius",
+   "main": "app.js",
+   "type": "module",
+   "scripts": {
+      "test": "npm start"
+   },
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "express": "^4.19.2",
+      "mysql2": "^3.10.1",
+      "sequelize": "^6.37.3"
+   }
+}
