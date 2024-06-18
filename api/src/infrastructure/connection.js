@@ -1,17 +1,11 @@
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize('concessionaria', 'mateus', '123', {
-    host: 'localhost',
-    dialect: 'mysql'
+const sequelize = new Sequelize('concessionaria', 'root', null, {
+    host: '172.18.0.2',
+    dialect: 'mysql',
+    port: '3306'
 });
 
-connection = async () => {
-    try {
-        await sequelize.authenticate();
-        console.log('Conexão bem sucedida');
-    } catch (error) {
-        console.error('Erro bro, você errou brow');
-    }
-}
+await sequelize.authenticate();
 
-export default connection;
+export default sequelize;
