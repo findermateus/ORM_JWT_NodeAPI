@@ -1,12 +1,17 @@
-import mysql2 from "mysql2/promise";
+import { Sequelize } from 'sequelize';
 
-const connection = await mysql2.createConnection({
-    host: '172.25.0.2',
-    user: 'root',
-    password: '123',
-    database: 'concessionaria'
+const sequelize = new Sequelize('concessionaria', 'mateus', '123', {
+    host: 'localhost',
+    dialect: 'mysql'
 });
 
-console.log("Conectado ao MYSQL");
+connection = async () => {
+    try {
+        await sequelize.authenticate();
+        console.log('Conexão bem sucedida');
+    } catch (error) {
+        console.error('Erro bro, você errou brow');
+    }
+}
 
 export default connection;

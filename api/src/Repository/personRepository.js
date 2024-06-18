@@ -1,4 +1,5 @@
 import Person from "../Entities/person.js";
+import connection from "../infrastructure/connection.js";
 
 class PersonRepository {
     static async loadAll() {
