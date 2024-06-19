@@ -6,35 +6,38 @@ const SECRET = 'n3ServerSide';
 
 function userFactory(user, password) {
     return {
-        user,
-        password
-    };
+        user: user,
+        password: password
+    }
 }
 // Dá pra implementar algum password hash aqui
+const user1 = userFactory('Douglas', '321')
+const user2 = userFactory('Mateus', '123')
 const USER_LIST = [
-    userFactory('Mateus', '123'),
-    userFactory('Douglas', '321')
+    user1,
+    user2
 ];
 
 
 class LoginRepository {
 
-    static authorizateUser(user) {
+    authorizateUser(user) {
         const token = jwt.sign({ user: user }, SECRET, { expiresIn: 300 });
+        console.log("token: "+token)
         return token;
     }
 
-    static verifyUser(user, password) {
+    verifyUser(user, password) {
         const userAuth = userFactory(user, password);
-
+        let token = false
         USER_LIST.forEach(user => {
-            if (user.user === userAuth.user && user.password === userAuth.password) {
-                authorizateUser(user.user);
-                return true
+            if (user.user == userAuth.user && user.password == userAuth.password) {
+                token = this.authorizateUser(user.user);
             }
         });
-        return false
+        return token;
     }
 }
+const loginRepository = new LoginRepository();
 
-export default LoginRepository;
+export default loginRepository;
