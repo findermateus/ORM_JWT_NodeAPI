@@ -1,6 +1,6 @@
 import express from 'express';
 import PersonController from './../Controller/personController.js'
-import jwt, { verifyJWT } from '../infrastructure/jwt.js';
+import { verifyJWT } from '../infrastructure/jwt.js';
 const router = express.Router();
 
 router.post('/person', verifyJWT, PersonController.create);
