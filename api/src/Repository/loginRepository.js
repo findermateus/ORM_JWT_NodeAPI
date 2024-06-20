@@ -1,5 +1,3 @@
-import Person from "../Entities/person.js";
-import connection from "../infrastructure/connection.js";
 import jwt from 'jsonwebtoken';
 
 const SECRET = 'n3ServerSide';

@@ -1,4 +1,4 @@
-class Person {
+class Proprietario {
     constructor(name, cpf, phone) {
         this.name = name;
         this.cpf = cpf;
@@ -6,4 +6,4 @@ class Person {
     }
 }
 
-export default Person;
+export default Proprietario;

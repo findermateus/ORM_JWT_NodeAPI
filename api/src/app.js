@@ -1,5 +1,4 @@
-import db from './infrastructure/connection.js';
-import personRoutes from './Routes/personRoutes.js';
+import personRoutes from './Routes/proprietarioRoutes.js';
 import loginRoutes from './Routes/loginRoutes.js';
 import app from './infrastructure/express.js';
 

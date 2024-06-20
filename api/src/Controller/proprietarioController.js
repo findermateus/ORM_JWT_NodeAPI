@@ -1,4 +1,3 @@
-import Person from "../Entities/person.js";
 import PersonRepository from "../Repository/personRepository.js";
 
 class PersonController {

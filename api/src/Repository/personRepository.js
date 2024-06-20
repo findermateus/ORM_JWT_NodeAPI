@@ -1,4 +1,4 @@
-import Person from "../Entities/person.js";
+import Person from "../Entities/proprietario.js";
 import connection from "../infrastructure/connection.js";
 
 class PersonRepository {
