@@ -1,19 +1,20 @@
 {
-   "name": "n3serverside",
-   "version": "1.0.0",
-   "description": "Projeto referente a N3 da disciplina programção server side. Desenvolvido por: Mateus Finder Martins e Douglas Vinícius",
-   "main": "app.js",
-   "type": "module",
-   "scripts": {
-      "test": "npm start"
-   },
-   "author": "",
-   "license": "ISC",
-   "dependencies": {
-      "body-parser": "^1.20.2",
-      "express": "^4.19.2",
-      "jsonwebtoken": "^9.0.2",
-      "mysql2": "^3.10.1",
-      "sequelize": "^6.37.3"
-   }
+  "name": "n3serverside",
+  "version": "1.0.0",
+  "description": "Projeto referente a N3 da disciplina programção server side. Desenvolvido por: Mateus Finder Martins e Douglas Vinícius",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.10.1",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.37.3"
+  }
 }
