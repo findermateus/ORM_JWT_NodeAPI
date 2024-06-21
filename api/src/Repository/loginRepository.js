@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const SECRET = 'n3ServerSide';
+const SECRET = process.env.SECRET;
 
 function userFactory(user, password) {
     return {
@@ -21,7 +21,7 @@ class LoginRepository {
 
     authorizateUser(user) {
         const token = jwt.sign({ user: user }, SECRET, { expiresIn: 300 });
-        console.log("token: "+token)
+        console.log("token: " + token)
         return token;
     }
 

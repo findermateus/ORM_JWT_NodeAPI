@@ -1,0 +1,21 @@
+version: "3.2"
+services:
+  mysql:
+    build:
+      context: .
+    environment:
+      - MYSQL_DATABASE=${DBNAME}
+      - MYSQL_USER=${DBUSER}
+      - MYSQL_ROOT_PASSWORD=${DBPASS}
+      - MYSQL_PASSWORD=${DBPASS}
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    container_name: server-side-mysql
+networks:
+  backend:
+volumes:
+  mysql-volume:
