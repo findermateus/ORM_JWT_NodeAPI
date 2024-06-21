@@ -8,7 +8,7 @@ function userFactory(user, password) {
         password: password
     }
 }
-// Dá pra implementar algum password hash aqui
+// Dá pra implementar algum password hash aqui e jogar isso no banco
 const user1 = userFactory('Douglas', '321')
 const user2 = userFactory('Mateus', '123')
 const USER_LIST = [
@@ -16,12 +16,10 @@ const USER_LIST = [
     user2
 ];
 
-
 class LoginRepository {
 
     authorizateUser(user) {
         const token = jwt.sign({ user: user }, SECRET, { expiresIn: 300 });
-        console.log("token: " + token)
         return token;
     }
 

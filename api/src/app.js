@@ -1,6 +1,6 @@
 import personRoutes from './Routes/personRoutes.js';
 import loginRoutes from './Routes/loginRoutes.js';
-import app from './infrastructure/express.js';
+import app from './Infrastructure/express.js';
 
 const PORT = 3000;
 

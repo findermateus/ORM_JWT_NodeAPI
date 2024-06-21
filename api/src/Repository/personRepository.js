@@ -1,10 +1,10 @@
 import Person from "../Entities/proprietario.js";
-import connection from "../infrastructure/connection.js";
+import connection from "../Infrastructure/connection.js";
 
 class PersonRepository {
     static async loadAll() {
         const sql = "SELECT * FROM person;"
-        const result = await executeQuery(sql);
+        const result = await connection.executeQuery(sql);
 
         return result;
     }

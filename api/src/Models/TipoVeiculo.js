@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../infrastructure/connection.js';
+import sequelize from '../Infrastructure/connection.js';
 
 const TipoVeiculo = sequelize.define('TipoVeiculo', {
     id_tipo: {

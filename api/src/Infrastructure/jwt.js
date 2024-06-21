@@ -4,10 +4,12 @@ dotenv.config();
 
 export function verifyJWT(req, res, next) {
     const token = req.headers['x-access-token'];
+    console.log(token);
     jwt.verify(token, process.env.SECRET, (error, decoded) => {
-        if (error) res.status(401).end();
-        console.log(decoded);
+        if (error) {
+            return res.status(401).json({ message: "Token inválido" }).end();
+        }
         req.user = decoded.user;
-    })
+    });
     next();
 }
