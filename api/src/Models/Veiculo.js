@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../infrastructure/connection.js';
+import sequelize from '../Infrastructure/connection.js';
 import Proprietario from './Proprietario.js';
 import TipoVeiculo from './TipoVeiculo.js';
 

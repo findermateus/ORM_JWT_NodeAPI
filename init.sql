@@ -8,4 +8,8 @@
         phone VARCHAR(11) 
     );
 
-    
+    CREATE TABLE IF NOT EXISTS user(
+        cod_user INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        user_name VARCHAR(60),
+        password VARCHAR(60)
+    );

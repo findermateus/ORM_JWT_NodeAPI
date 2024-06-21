@@ -1,4 +1,4 @@
-import sequelize from '../infrastructure/connection.js';
+import sequelize from '../Infrastructure/connection.js';
 
 const Proprietario = sequelize.define('Proprietario', {
     cpf: {
