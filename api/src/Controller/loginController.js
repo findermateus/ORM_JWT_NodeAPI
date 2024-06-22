@@ -20,5 +20,5 @@ class LoginController {
         res.end();
     }
 }
-const loginController = new LoginController();
-export default loginController;
+
+export default LoginController;
