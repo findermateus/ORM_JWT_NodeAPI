@@ -2,12 +2,12 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../Infrastructure/connection.js';
 
 const TipoVeiculo = sequelize.define('TipoVeiculo', {
-    id_tipo: {
+    cod_tipo: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    tipo: {
+    desc_tipo: {
         type: DataTypes.STRING,
         allowNull: false
     }

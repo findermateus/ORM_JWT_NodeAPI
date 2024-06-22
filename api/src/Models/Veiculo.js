@@ -20,7 +20,7 @@ const Veiculo = sequelize.define('Veiculo', {
         type: DataTypes.INTEGER,
         references: {
             model: TipoVeiculo,
-            key: 'id_tipo'
+            key: 'cod_tipo'
         }
     },
     cpf_proprietario: {
@@ -34,12 +34,14 @@ const Veiculo = sequelize.define('Veiculo', {
 
 Veiculo.beforeCreate(async (veiculo, options) => {
     if (veiculo.preco_veiculo < 50000) {
-        veiculo.id_tipo = 1; // Popular
-    } else if (veiculo.preco_veiculo >= 50000 && veiculo.preco_veiculo < 100000) {
-        veiculo.id_tipo = 2; // Luxo
-    } else {
-        veiculo.id_tipo = 3; // Super Luxo
+        veiculo.id_tipo = 1;
+        return;
     }
+    if (veiculo.preco_veiculo >= 50000 && veiculo.preco_veiculo < 100000) {
+        veiculo.id_tipo = 2; // Luxo
+        return;
+    }
+    veiculo.id_tipo = 3; // Super Luxo
 });
 
 export default Veiculo;

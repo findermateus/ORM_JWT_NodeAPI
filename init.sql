@@ -1,11 +1,25 @@
     CREATE DATABASE IF NOT EXISTS concessionaria;
     USE concessionaria;
     
-    CREATE TABLE IF NOT EXISTS person(
-        cod_person INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-        name VARCHAR(60) NOT NULL,
-        cpf VARCHAR(11) NOT NULL,
-        phone VARCHAR(11) 
+    CREATE TABLE IF NOT EXISTS proprietario(
+        cpf VARCHAR(11) PRIMARY KEY NOT NULL,
+        nome VARCHAR(60) NOT NULL,
+        fone VARCHAR(11) 
+    );
+
+    CREATE TABLE IF NOT EXISTS tipoveiculo(
+        cod_tipo INT PRIMARY KEY NOT NULL,
+        desc_tipo VARCHAR(60) NOT NULL 
+    );
+    
+    CREATE TABLE IF NOT EXISTS veiculo(
+        placa_veiculo VARCHAR(7) PRIMARY KEY NOT NULL,
+        modelo_veiculo VARCHAR(60),
+        preco_veiculo DECIMAL(8,2),
+        tipo_veiculo INT NOT NULL,
+        proprietario VARCHAR(12),
+        FOREIGN KEY(tipo_veiculo) REFERENCES tipoveiculo(cod_tipo),
+        FOREIGN KEY(proprietario) REFERENCES proprietario(cpf)
     );
 
     CREATE TABLE IF NOT EXISTS user(
