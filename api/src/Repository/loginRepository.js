@@ -19,7 +19,7 @@ const USER_LIST = [
 class LoginRepository {
 
     authorizateUser(user) {
-        const token = jwt.sign({ user: user }, SECRET, { expiresIn: 300 });
+        const token = jwt.sign({ user: user }, SECRET, { expiresIn: '1h' });
         return token;
     }
 
