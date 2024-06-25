@@ -12,10 +12,10 @@ class ProprietarioController {
    create(req, res) {
       try {
          const data = req.body;
-         const result = ProprietarioRepository.create(data);
-         res.status(201).json({ message: 'Proprietario criado com sucesso.', result });
+         ProprietarioRepository.create(data);
+         res.status(201).json({ message: 'Proprietario criado com sucesso.' });
       } catch (e) {
-         res.status(400).json({ message: 'Erro ao criar proprietario.', result });
+         res.status(400).json({ message: 'Erro ao criar proprietario.' });
       }
    }
    delete(req, res) {

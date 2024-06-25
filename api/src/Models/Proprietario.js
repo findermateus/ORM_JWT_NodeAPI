@@ -1,6 +1,7 @@
+import { DataTypes } from 'sequelize';
 import sequelize from '../Infrastructure/connection.js';
 
-const Proprietario = sequelize.define('Proprietario', {
+const Proprietario = sequelize.define('proprietario', {
     cpf: {
         type: DataTypes.STRING(11),
         primaryKey: true
@@ -12,7 +13,19 @@ const Proprietario = sequelize.define('Proprietario', {
     fone: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
+    },
+    updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
     }
+}, {
+    timestamps: true
 });
 
 export default Proprietario;

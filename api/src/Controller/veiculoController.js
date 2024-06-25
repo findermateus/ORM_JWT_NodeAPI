@@ -1,7 +1,7 @@
 import VeiculoRepository from "../Repository/veiculoRepository.js";
 
 class VeiculoController {
-    loadAll(req, res) {
+    loadAll(_, res) {
         try {
             const result = VeiculoRepository.loadAll();
             res.status(200).json({ message: 'Requisição concluída.', result });
@@ -23,9 +23,9 @@ class VeiculoController {
         try {
             const data = req.body;
             const result = VeiculoRepository.create(data);
-            res.status(201).json({ message: 'Veículo criado com sucesso.', result });
+            res.status(201).json({ message: 'Veículo criado com sucesso.' });
         } catch (e) {
-            res.status(400).json({ message: 'Erro ao criar veículo.', result });
+            res.status(400).json({ message: 'Erro ao criar veículo.' });
         }
     }
     delete(req, res) {

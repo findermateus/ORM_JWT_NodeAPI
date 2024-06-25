@@ -1,18 +1,37 @@
-import Proprietario from "../Entities/proprietario.js";
-import connection from "../Infrastructure/connection.js";
+import Proprietario from '../Models/Proprietario.js';
 
 class ProprietarioRepository {
-    loadAll() {
-        // consulta
-        return true;
+    async loadAll() {
+        try {
+            const proprietarios = await Proprietario.findAll();
+            return proprietarios;
+        } catch (error) {
+            console.error('Erro ao carregar todos os proprietários:', error);
+            throw error;
+        }
     }
-    create(proprietarioData) {
-        // insert
-        return true;
+
+    async create(proprietarioData) {
+        try {
+            await Proprietario.create(proprietarioData);
+        } catch (error) {
+            console.error('Erro ao criar proprietário:', error);
+            throw error;
+        }
     }
-    delete(cpf) {
-        //delete
-        return true;
+
+    async delete(cpf) {
+        try {
+            const result = await Proprietario.destroy({
+                where: {
+                    cpf: cpf
+                }
+            });
+            return result;
+        } catch (error) {
+            console.error('Erro ao excluir proprietário:', error);
+            throw error;
+        }
     }
 }
 

@@ -1,17 +1,51 @@
-import connection from "../Infrastructure/connection.js";
+import Veiculo from '../Models/Veiculo.js';
 
 class VeiculoRepository {
-    loadAll() {
-        // consulta
-        return true;
+    async loadAll() {
+        try {
+            const veiculos = await Veiculo.findAll();
+            return veiculos;
+        } catch (error) {
+            console.error('Erro ao carregar todos os veículos:', error);
+            throw error;
+        }
     }
-    loadByProprietario(cpf) {
-        //select * from veiculo where proprietario=cpf
-        return true;
+
+    async loadByProprietario(cpf) {
+        try {
+            const veiculos = await Veiculo.findAll({
+                where: {
+                    cpf_proprietario: cpf
+                }
+            });
+            return veiculos;
+        } catch (error) {
+            console.error('Erro ao carregar veículos por proprietário:', error);
+            throw error;
+        }
     }
-    create(veiculoData) {
-        // insert
-        return result;
+
+    async create(veiculoData) {
+        try {
+            await Veiculo.create(veiculoData);
+        } catch (error) {
+            console.error('Erro ao criar veículo:', error);
+            throw error;
+        }
+    }
+
+    async delete(placa) {
+        try {
+            const result = await Veiculo.destroy({
+                where: {
+                    placa_veiculo: placa
+                }
+            });
+            return result;
+        } catch (error) {
+            console.error('Erro ao excluir veículo:', error);
+            throw error;
+        }
     }
 }
 

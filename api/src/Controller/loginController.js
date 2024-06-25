@@ -16,8 +16,8 @@ class LoginController {
             res.status(401).json({ message: 'Ocorreu um erro ao efetuar o login' });
         }
     }
-    logout(req, res) {
-        res.end();
+    logout(_, res) {
+        res.json({ auth: false, token: null });
     }
 }
 

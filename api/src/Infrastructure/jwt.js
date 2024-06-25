@@ -9,6 +9,6 @@ export function verifyJWT(req, res, next) {
             return res.status(401).json({ message: "Token inválido" }).end();
         }
         req.user = decoded.user;
+        next();
     });
-    next();
 }
