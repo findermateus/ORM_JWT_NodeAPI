@@ -14,7 +14,7 @@
         desc_tipo VARCHAR(60) NOT NULL,
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
         updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
-    )
+    );
     INSERT INTO tipoVeiculo (cod_tipo, desc_tipo) VALUES (1, "simples"), (2, "luxo"), (3, "super luxo");
 
     CREATE TABLE IF NOT EXISTS veiculos (
