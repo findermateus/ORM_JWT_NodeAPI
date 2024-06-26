@@ -1,5 +1,5 @@
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRG91Z2xhcyIsImlhdCI6MTcxOTQzNTE0NiwiZXhwIjoxNzE5NDM4NzQ2fQ.d9uA2qJ3gDfw4unVtaJqNR-8C_P3TF3SPaXOyyNnwy4
+@token = coloque o token aqui
 ### Create Proprietário
 POST http://localhost:3000/proprietario/create
 Content-Type: application/json
