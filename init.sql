@@ -23,6 +23,7 @@
         preco_veiculo DECIMAL(8, 2),
         tipo_veiculo INT NOT NULL,
         proprietario VARCHAR(12),
+        FOREIGN KEY(proprietario) REFERENCES proprietarios(cpf),
         FOREIGN KEY(tipo_veiculo) REFERENCES tipoVeiculo(cod_tipo),
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
         updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
