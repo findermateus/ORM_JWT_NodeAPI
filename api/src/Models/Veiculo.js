@@ -1,11 +1,10 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../Infrastructure/connection.js';
 import Proprietario from './Proprietario.js';
-import TipoVeiculo from './TipoVeiculo.js';
 
 const Veiculo = sequelize.define('veiculo', {
     placa_veiculo: {
-        type: DataTypes.STRING(10),
+        type: DataTypes.STRING(25),
         primaryKey: true
     },
     modelo_veiculo: {
@@ -16,14 +15,11 @@ const Veiculo = sequelize.define('veiculo', {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     },
-    id_tipo: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: TipoVeiculo,
-            key: 'cod_tipo'
-        }
+    tipo_veiculo: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
-    cpf_proprietario: {
+    proprietario: {
         type: DataTypes.STRING(11),
         references: {
             model: Proprietario,
@@ -46,14 +42,12 @@ const Veiculo = sequelize.define('veiculo', {
 
 Veiculo.beforeCreate(async (veiculo, _) => {
     if (veiculo.preco_veiculo < 50000) {
-        veiculo.id_tipo = 1; // simples
-        return;
+        veiculo.tipo_veiculo = "simples";
+    } else if (veiculo.preco_veiculo < 100000) {
+        veiculo.tipo_veiculo = "Luxo";
+    } else {
+        veiculo.tipo_veiculo = "Super Luxo";
     }
-    if (veiculo.preco_veiculo >= 50000 && veiculo.preco_veiculo < 100000) {
-        veiculo.id_tipo = 2; // Luxo
-        return;
-    }
-    veiculo.id_tipo = 3; // Super Luxo
 });
 
 export default Veiculo;

@@ -1,0 +1,36 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRG91Z2xhcyIsImlhdCI6MTcxOTM2MDE2NCwiZXhwIjoxNzE5MzYzNzY0fQ.cZn7hF4AlgdbNZVGhBBtLBhTFT5MaqxKmkq65eJBt74
+### Create Veículo
+POST http://localhost:3000/veiculo/create
+Content-Type: application/json
+x-access-token: {{token}}
+ 
+{
+    "placa_veiculo": "ABC34",
+    "modelo_veiculo": "Fusca",
+    "marca": "Volkswagen",
+    "ano": 1970,
+    "proprietario": "12345678901",
+    "preco_veiculo": 500000
+}
+ 
+### Load All Veículos
+GET http://localhost:3000/veiculo/loadAll
+x-access-token: {{token}}
+ 
+### Load Veículo by Proprietário
+POST http://localhost:3000/veiculo/loadByProprietario
+Content-Type: application/json
+x-access-token: {{token}}
+ 
+{
+    "cpf": "12345678901"
+}
+ 
+### Delete Veículo
+DELETE http://localhost:3000/veiculo/delete
+Content-Type: application/json
+x-access-token: {{token}}
+ 
+{
+    "placa": "ABC-1234"
+}

@@ -1,0 +1,12 @@
+### Login
+POST http://localhost:3000/login/login
+Content-Type: application/json
+ 
+{
+    "user": "Douglas",
+    "password": "321"
+}
+ 
+### Logout
+POST http://localhost:3000/login/logout
+Content-Type: application/json

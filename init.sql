@@ -9,23 +9,14 @@
         updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
     );
 
-    CREATE TABLE IF NOT EXISTS tipoveiculos (
-        cod_tipo INT PRIMARY KEY NOT NULL,
-        desc_tipo VARCHAR(60) NOT NULL,
-        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
-    );
-
     CREATE TABLE IF NOT EXISTS veiculos (
-        placa_veiculo VARCHAR(7) PRIMARY KEY NOT NULL,
+        placa_veiculo VARCHAR(25) PRIMARY KEY NOT NULL,
         modelo_veiculo VARCHAR(60),
         preco_veiculo DECIMAL(8, 2),
-        tipo_veiculo INT NOT NULL,
+        tipo_veiculo VARCHAR(60),
         proprietario VARCHAR(12),
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
-        FOREIGN KEY (tipo_veiculo) REFERENCES tipoveiculos(cod_tipo),
-        FOREIGN KEY (proprietario) REFERENCES proprietarios(cpf)
+        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
     );
 
     CREATE TABLE IF NOT EXISTS user(
