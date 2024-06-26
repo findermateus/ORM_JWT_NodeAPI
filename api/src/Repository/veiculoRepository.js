@@ -15,12 +15,25 @@ class VeiculoRepository {
         try {
             const veiculos = await Veiculo.findAll({
                 where: {
-                    cpf_proprietario: cpf
+                    proprietario: cpf
                 }
             });
             return veiculos;
         } catch (error) {
             console.error('Erro ao carregar veículos por proprietário:', error);
+            throw error;
+        }
+    }
+    async loadByTipo(tipo) {
+        try {
+            const veiculos = await Veiculo.findAll({
+                where: {
+                    tipo_veiculo: tipo
+                }
+            });
+            return veiculos;
+        } catch (error) {
+            console.error('Erro ao carregar veículos por tipo:', error);
             throw error;
         }
     }

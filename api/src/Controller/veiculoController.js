@@ -19,6 +19,16 @@ class VeiculoController {
             res.status(400).json({ message: 'Erro carregar veículo.', result });
         }
     }
+    async loadByTipo(req, res) {
+        try {
+            const data = req.body;
+            const tipo = data.tipo;
+            const result = await VeiculoRepository.loadByTipo(tipo);
+            res.status(200).json({ message: 'Veículo carregado com sucesso.', result });
+        } catch (error) {
+            res.status(400).json({ message: 'Erro carregar veículo.', result });
+        }
+    }
     async create(req, res) {
         try {
             const data = req.body;

@@ -1,16 +1,16 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRG91Z2xhcyIsImlhdCI6MTcxOTM2MDE2NCwiZXhwIjoxNzE5MzYzNzY0fQ.cZn7hF4AlgdbNZVGhBBtLBhTFT5MaqxKmkq65eJBt74
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRG91Z2xhcyIsImlhdCI6MTcxOTM2ODQ4NCwiZXhwIjoxNzE5MzcyMDg0fQ.D2U-4cmvrZmTOGQoEwajVHs9QdP_BsbFsC_d5Oke2Qg
 ### Create Veículo
 POST http://localhost:3000/veiculo/create
 Content-Type: application/json
 x-access-token: {{token}}
  
 {
-    "placa_veiculo": "ABC34",
+    "placa_veiculo": "ABC35",
     "modelo_veiculo": "Fusca",
     "marca": "Volkswagen",
     "ano": 1970,
     "proprietario": "12345678901",
-    "preco_veiculo": 500000
+    "preco_veiculo": 30000
 }
  
 ### Load All Veículos
@@ -26,6 +26,16 @@ x-access-token: {{token}}
     "cpf": "12345678901"
 }
  
+### Load Veículo by Tipo
+POST http://localhost:3000/veiculo/loadByTipo
+Content-Type: application/json
+x-access-token: {{token}}
+ 
+{
+    "tipo": "2"
+}
+ 
+
 ### Delete Veículo
 DELETE http://localhost:3000/veiculo/delete
 Content-Type: application/json

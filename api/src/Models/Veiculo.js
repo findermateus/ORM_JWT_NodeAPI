@@ -20,7 +20,7 @@ const Veiculo = sequelize.define('veiculo', {
         allowNull: true
     },
     proprietario: {
-        type: DataTypes.STRING(11),
+        type: DataTypes.STRING(12),
         references: {
             model: Proprietario,
             key: 'cpf'
@@ -42,12 +42,14 @@ const Veiculo = sequelize.define('veiculo', {
 
 Veiculo.beforeCreate(async (veiculo, _) => {
     if (veiculo.preco_veiculo < 50000) {
-        veiculo.tipo_veiculo = "simples";
-    } else if (veiculo.preco_veiculo < 100000) {
-        veiculo.tipo_veiculo = "Luxo";
-    } else {
-        veiculo.tipo_veiculo = "Super Luxo";
+        veiculo.tipo_veiculo = 1;
+        return;
     }
+    if (veiculo.preco_veiculo < 100000) {
+        veiculo.tipo_veiculo = 2;
+        return
+    }
+    veiculo.tipo_veiculo = 3;
 });
 
 export default Veiculo;
