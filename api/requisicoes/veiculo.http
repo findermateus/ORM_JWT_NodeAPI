@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRG91Z2xhcyIsImlhdCI6MTcxOTM2ODQ4NCwiZXhwIjoxNzE5MzcyMDg0fQ.D2U-4cmvrZmTOGQoEwajVHs9QdP_BsbFsC_d5Oke2Qg
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRG91Z2xhcyIsImlhdCI6MTcxOTQwMzI1MSwiZXhwIjoxNzE5NDA2ODUxfQ.hsvakIqjDvfaRFUkApYDDmrlH3cJEMgkzot9-W-Hml8
 ### Create Veículo
 POST http://localhost:3000/veiculo/create
 Content-Type: application/json
@@ -18,7 +18,7 @@ GET http://localhost:3000/veiculo/loadAll
 x-access-token: {{token}}
  
 ### Load Veículo by Proprietário
-POST http://localhost:3000/veiculo/loadByProprietario
+POST http://localhost:3000/veiculo/loadByP
 Content-Type: application/json
 x-access-token: {{token}}
  

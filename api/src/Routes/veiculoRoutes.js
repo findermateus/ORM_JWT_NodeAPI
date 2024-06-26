@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.post('/create', verifyJWT, veiculoController.create);
 router.get('/loadAll', verifyJWT, veiculoController.loadAll);
-router.post('/loadByPropritario', verifyJWT, veiculoController.loadByProprietario);
 router.post('/loadByTipo', verifyJWT, veiculoController.loadByTipo);
+router.post('/loadByP', verifyJWT, veiculoController.loadByProprietario);
 router.delete('/delete', verifyJWT, veiculoController.delete);
 
 
