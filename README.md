@@ -14,7 +14,7 @@ docker inspect <nome-container>
 ```
 * API
 ```
-cd server/
+cd api/
 npm start
 ```
 ## Requisições
